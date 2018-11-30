@@ -4,7 +4,21 @@
              xmlns:local="clr-namespace:PetShop"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate x:Key="ItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding ImageSource}" 
+                           Margin="8" 
+                           Width="50" 
+                           Height="50" />
+                <StackPanel>
+                    <TextBlock Text="{Binding ItemName}" />
+                    <TextBlock Text="{Binding Description}"
+                                   TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Price}"/>
+                    <TextBlock Text="{Binding Stock}"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
     </Application.Resources>
     
     

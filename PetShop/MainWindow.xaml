@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PetShop"
         mc:Ignorable="d"
-        Title="Finesse Pet Shop" Height="500" Width="525" WindowStartupLocation="CenterScreen">
+        Title="Finesse Pet Shop"  
+        WindowStartupLocation="CenterScreen" 
+        SizeToContent="Height"
+        Width="350" 
+        >
 
 
     <Window.Resources>
@@ -15,9 +19,16 @@
         <DataTemplate DataType="{x:Type local:CreateUserVM}">
             <local:CreateView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type local:SellerViewVM}">
+            <local:SellerView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:ShopperViewVM}">
+            <local:ShopperView/>
+        </DataTemplate>
     </Window.Resources>
     
-    <Grid Margin="0,20">
+    
+    <Grid Margin="0,0,0,20">
         <ContentControl x:Name="mainDisplay" Content="{Binding ActiveView}"/>
     </Grid>
     

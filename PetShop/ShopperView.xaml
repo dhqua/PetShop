@@ -6,7 +6,17 @@
              xmlns:local="clr-namespace:PetShop"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Save"></MenuItem>
+                <MenuItem Header="Save As"></MenuItem>
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}"></MenuItem>
+            <MenuItem Header="Cart Contents"></MenuItem>
+        </Menu>
+        
+        <Label x:Name="label" Content="Shopper Screen" HorizontalAlignment="Left" Margin="116,95,0,0" VerticalAlignment="Top" Background="White"/>
+    </DockPanel>
 </UserControl>

@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml.Serialization;
 
 namespace PetShop
 {
-    public class LoginVM
+    public class LoginVM : INotifyPropertyChanged
     {
 
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public MainWindowVM MainView;
         public List<User> Users;
 
         public User queryUser;
-
-        string Username;
-
-        string Password;
 
         public LoginVM()
         {
@@ -32,6 +31,35 @@ namespace PetShop
             MainView = mainView;
             Users = mainView.Users;
         }
+
+
+        private string _userName;
+
+        public string Username
+        {
+            get { return _userName; }
+            set
+            {
+                _userName = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Username"));
+
+            }
+        }
+
+        private string _password;
+
+        public string Password
+        {
+            get { return _password; }
+            set
+            {
+                _password = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Password"));
+
+            }
+        }
+
+
         
 
         
@@ -70,7 +98,40 @@ namespace PetShop
 
         private void LoginClicked(object obj)
         {
-            MessageBox.Show("Login clicked");
+            PasswordBox passwordWorkAround = obj as PasswordBox;
+
+            if (obj != null)
+            {
+                Password = passwordWorkAround.Password;
+            }
+
+            if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(passwordWorkAround.Password))
+            {
+                queryUser = Users.FirstOrDefault(user => user.UserName == Username);
+                
+                if( queryUser != null && Password == queryUser.Password)
+                {
+                    if(queryUser.isSeller)
+                    {
+                        MainView.CurrentUser = queryUser;
+                        MainView.ActiveView = new SellerViewVM(MainView);
+                    }
+                    else
+                    {
+                        MainView.CurrentUser = queryUser;
+                        MainView.ActiveView = new ShopperViewVM(MainView);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password!");
+            }
+
         }
 
         // Create User Button
@@ -88,6 +149,7 @@ namespace PetShop
             }
         }
         DelegateCommand _createCommand;
+
 
         private void createClicked(object obj)
         {

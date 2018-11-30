@@ -70,6 +70,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SellerView.xaml.cs">
+      <DependentUpon>SellerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SellerViewVM.cs" />
     <Compile Include="CreateUser.xaml.cs">
       <DependentUpon>CreateUser.xaml</DependentUpon>
     </Compile>
@@ -83,6 +87,10 @@
     </Compile>
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="PaymentInfo.cs" />
+    <Compile Include="ShopperView.xaml.cs">
+      <DependentUpon>ShopperView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShopperViewVM.cs" />
     <Compile Include="User.cs" />
     <Page Include="CreateUser.xaml">
       <SubType>Designer</SubType>
@@ -116,6 +124,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SellerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShopperView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

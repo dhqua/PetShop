@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PetShop
 {
     /// <summary>
-    /// Interaction logic for BuyerView.xaml
+    /// Interaction logic for SellerView.xaml
     /// </summary>
-    public partial class BuyerView : UserControl
+    public partial class SellerView : UserControl
     {
-        public BuyerView()
+        public SellerView()
         {
             InitializeComponent();
         }

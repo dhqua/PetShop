@@ -24,6 +24,8 @@ namespace PetShop
         //Main csv data file
         public readonly  string XmlPath = "users.xml";
 
+        public User CurrentUser;
+
 
         private object _activeView;
         public object ActiveView

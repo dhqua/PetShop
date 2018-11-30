@@ -8,7 +8,7 @@
              d:DesignHeight="400" d:DesignWidth="350" Background="White">
     
     
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="600">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" >
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="User Name:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
             <TextBox x:Name="newUserName" Text="{Binding UserName}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Username must only contain letters"/>
