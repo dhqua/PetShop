@@ -1,0 +1,24 @@
+﻿<Window x:Class="PetShop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetShop"
+        mc:Ignorable="d"
+        Title="Finesse Pet Shop" Height="500" Width="525" WindowStartupLocation="CenterScreen">
+
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type local:LoginVM}">
+            <local:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:CreateUserVM}">
+            <local:CreateView/>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid Margin="0,20">
+        <ContentControl x:Name="mainDisplay" Content="{Binding ActiveView}"/>
+    </Grid>
+    
+</Window>
