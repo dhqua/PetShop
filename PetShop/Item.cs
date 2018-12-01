@@ -14,6 +14,9 @@ namespace PetShop
     public class Item : INotifyPropertyChanged
     {
 
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+
         public Item()
         {
                 
@@ -90,24 +93,5 @@ namespace PetShop
             }
         }
 
-        /*
-        [XmlIgnore]
-        private int purchasedAmount;
-        [XmlElement(DataType = "int", ElementName = "PurchasedAmount")]
-        public int PurchasedAmount
-        {
-            get { return purchasedAmount; }
-            set
-            {
-                purchasedAmount = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("PurchasedAmount"));
-            }
-        }
-        */
-
-
-        
-
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
     }
 }

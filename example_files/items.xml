@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ArrayOfItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item>
+    <Description>Test description</Description>
+    <Price>12.50</Price>
+    <Stock>6</Stock>
+    <ItemName>Dog</ItemName>
+    <ImagePath>\img\testdog.jpeg</ImagePath>
+  </Item>
+  <Item>
+    <Description>Test description</Description>
+    <Price>89.99</Price>
+    <Stock>8</Stock>
+    <ItemName>Lion</ItemName>
+    <ImagePath>\img\lion.jpg</ImagePath>
+  </Item>
+  <Item>
+    <Description>Test description</Description>
+    <Price>49.99</Price>
+    <Stock>6</Stock>
+    <ItemName>Snake</ItemName>
+    <ImagePath>\img\snake.jpeg</ImagePath>
+  </Item>
+  <Item>
+    <Description>Test description</Description>
+    <Price>999.99</Price>
+    <Stock>0</Stock>
+    <ItemName>Whale</ItemName>
+    <ImagePath>\img\whale.jpg</ImagePath>
+  </Item>
+</ArrayOfItem>

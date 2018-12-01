@@ -8,7 +8,19 @@
              d:DesignHeight="300" d:DesignWidth="400" MinWidth="400">
     
     <DockPanel>
-
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Save" Command="{Binding SaveCommand}"></MenuItem>
+                <MenuItem Header="Save As" Command="{Binding SaveAsCommand}"></MenuItem>
+                <MenuItem Header="Logout" Command="{Binding LogoutCommand}"></MenuItem>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}" FontStyle="Italic" ></MenuItem>
+            <MenuItem Header="{Binding CurrentUser.NumOfItemsInCart}" HeaderStringFormat="{}{0} items = "></MenuItem>
+            <MenuItem Header="{Binding CurrentUser.Total}" HeaderStringFormat="${0}"></MenuItem>
+        </Menu>
+        
+        
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Top">
             <TextBlock Text="Seller Home Page" FontSize="20" FontStyle="Italic" Margin="0,20"></TextBlock>
             <Button Content="Add Pet" Command="{Binding AddToCartCommand}" Style="{StaticResource buttonStyle}"/>

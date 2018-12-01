@@ -203,9 +203,5 @@ namespace PetShop
             MainView.ActiveView = new LoginVM(MainView);
         }
 
-
-
-
-
     }
 }

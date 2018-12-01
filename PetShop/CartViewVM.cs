@@ -9,10 +9,8 @@ using System.Windows.Input;
 
 namespace PetShop
 {
-    public class CartViewVM : INotifyPropertyChanged
+    public class CartViewVM : MainViewSuper
     {
-
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public CartViewVM()
         {
@@ -25,29 +23,6 @@ namespace PetShop
             CurrentUser = currentUser;
         }
 
-        MainWindowVM MainView;
-
-        private User _currentUser;
-        public User CurrentUser
-        {
-            get { return _currentUser; }
-            set
-            {
-                _currentUser = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("CurrentUser"));
-            }
-        }
-
-        private Item selectedItem;
-        public Item SelectedItem
-        {
-            get { return selectedItem; }
-            set
-            {
-                selectedItem = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
-            }
-        }
 
 
         public ICommand RemoveCartCommand

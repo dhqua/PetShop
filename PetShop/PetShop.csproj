@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="CartViewVM.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="MainViewSuper.cs" />
     <Compile Include="PurchaseReciept.xaml.cs">
       <DependentUpon>PurchaseReciept.xaml</DependentUpon>
     </Compile>
@@ -83,9 +84,6 @@
       <DependentUpon>SellerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SellerViewVM.cs" />
-    <Compile Include="CreateUser.xaml.cs">
-      <DependentUpon>CreateUser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CreateUserVM.cs" />
     <Compile Include="CreateView.xaml.cs">
       <DependentUpon>CreateView.xaml</DependentUpon>
@@ -105,15 +103,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CreateView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,9 +118,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginVM.cs" />
     <Compile Include="MainWindow.xaml.cs">

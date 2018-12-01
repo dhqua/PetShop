@@ -7,21 +7,14 @@ using System.Threading.Tasks;
 
 namespace PetShop
 {
-    public class SellerViewVM : INotifyPropertyChanged
+    public class SellerViewVM : MainViewSuper
     {
-        public MainWindowVM MainView;
-        public List<User> Users;
-
-
-        public User currentUser;
-
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public SellerViewVM(MainWindowVM mainView)
         {
             MainView = mainView;
             Users = MainView.Users;
-            currentUser = MainView.CurrentUser;
+            CurrentUser = MainView.CurrentUser;
 
 
         }
