@@ -5,9 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PetShop"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label x:Name="Buyer_Screen" Content="Seller View" HorizontalAlignment="Left" Margin="119,139,0,0" VerticalAlignment="Top" Background="White"/>
+             d:DesignHeight="300" d:DesignWidth="400" MinWidth="400">
+    
+    <DockPanel>
 
-    </Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Top">
+            <TextBlock Text="Seller Home Page" FontSize="20" FontStyle="Italic" Margin="0,20"></TextBlock>
+            <Button Content="Add Pet" Command="{Binding AddToCartCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Remove Pet" Command="{Binding ViewCartCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Edit Pet" Command="{Binding CheckoutCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Change Theme" Command="{Binding CheckoutCommand}" Style="{StaticResource buttonStyle}"/>
+        </StackPanel>
+
+    </DockPanel>
 </UserControl>

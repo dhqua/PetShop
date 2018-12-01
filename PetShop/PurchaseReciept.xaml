@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="PetShop.PurchaseReciept"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PetShop"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="300">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Save" Command="{Binding SaveCommand}"></MenuItem>
+                <MenuItem Header="Save As" Command="{Binding SaveAsCommand}"></MenuItem>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}" FontStyle="Italic" ></MenuItem>
+            <MenuItem Header="{Binding CurrentUser.NumOfItemsInCart}" HeaderStringFormat="{}{0} items = "></MenuItem>
+            <MenuItem Header="{Binding CurrentUser.Total, StringFormat={}{0:C} }"></MenuItem>
+        </Menu>
+        <Label x:Name="label" DockPanel.Dock="Top" Content="Thank you for your business! " HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
+        <Label x:Name="confirmation" DockPanel.Dock="Top" Content="Your card on file has been charged,See reciept below. " HorizontalAlignment="Center"  Background="Transparent" FontSize="11"/>
+
+        <ListBox x:Name="itemListBox" 
+                 DockPanel.Dock="Top"
+                 Height="300"
+                 ItemsSource="{Binding CurrentUser.Cart}" 
+                 ItemTemplate="{StaticResource CartItemTemplate}"
+                 SelectedItem="{Binding SelectedItem}"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Top">
+            <TextBlock Text="{Binding CurrentUser.NumOfItemsInCart, StringFormat={}{0} Items }"
+                       Style="{StaticResource carTextStyle}"/>
+            <TextBlock Text="{Binding CurrentUser.Total, StringFormat=Total:{0:C}}"
+                       Style="{StaticResource carTextStyle}"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+            <Button Content="Back" Command="{Binding BackCartCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Email Reciept?" Command="{Binding EmailReciptCommand}" Style="{StaticResource buttonStyle}"/>
+        </StackPanel>
+
+
+
+    </DockPanel>
+</UserControl>

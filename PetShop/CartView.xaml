@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="PetShop.CartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PetShop"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400" MinHeight="300">
+
+    <DockPanel>
+        <ListBox x:Name="itemListBox" 
+                 DockPanel.Dock="Top"
+                 Height="300"
+                 ItemsSource="{Binding CurrentUser.Cart}" 
+                 ItemTemplate="{StaticResource CartItemTemplate}"
+                 SelectedItem="{Binding SelectedItem}"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+            <Button Content="Back" Command="{Binding BackCartCommand}" Style="{StaticResource buttonStyle}"/>
+            <TextBlock Text="{Binding CurrentUser.NumOfItemsInCart, StringFormat={}{0} Items }"
+                       Style="{StaticResource carTextStyle}"/>
+            <TextBlock Text="{Binding CurrentUser.Total, StringFormat=Total:{0:C}}"
+                       Style="{StaticResource carTextStyle}"></TextBlock>
+            <Button Content="Remove Item" Command="{Binding RemoveCartCommand}" Style="{StaticResource buttonStyle}"/>
+        </StackPanel>
+        
+    </DockPanel>
+    
+</UserControl>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,35 @@ namespace PetShop
 
     [XmlRoot(ElementName = "User")]
     //CONSTRUCTOR
-    public class User
+    public class User : INotifyPropertyChanged
     {
-            
-            [XmlElement(DataType = "string", ElementName = "UserName")]
+
+        public User()
+        {
+            // Initializes Cart
+            Cart = new ObservableCollection<Item>();
+            Total = 0;
+            NumOfItemsInCart = 0;
+        }
+
+        public User(string uName, string pWord, string firstName, string lastName, string email, bool seller, PaymentInfo cardInfo)
+        {
+            UserName = uName;
+            Password = pWord;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            isSeller = seller;
+            creditCardInfo = cardInfo;
+
+            // Initializes Cart
+            Cart = new ObservableCollection<Item>();
+            Total = 0;
+            NumOfItemsInCart = 0;
+        }
+
+
+        [XmlElement(DataType = "string", ElementName = "UserName")]
             public string UserName { get; set; }
 
             [XmlElement(DataType = "string", ElementName = "Password")]
@@ -35,21 +61,51 @@ namespace PetShop
             [XmlElement(ElementName ="UserPaymentInfo")]
             public PaymentInfo creditCardInfo { get; set; }
 
-        public User()
-        {
+        // Cart Implementation
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        [XmlIgnore]
+        private double total;
 
+        [XmlElement(ElementName ="Total")]
+        public double Total
+        {
+            get { return total; }
+            set
+            {
+                total = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Total"));
+            }
         }
 
-        public User(string uName, string pWord, string firstName, string lastName, string email,bool seller, PaymentInfo cardInfo)
+        [XmlIgnore]
+        private double numOfItemsInCart;
+
+        [XmlElement(ElementName = "ItemsInCart")]
+        public double NumOfItemsInCart
         {
-            UserName = uName;
-            Password = pWord;
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            isSeller = seller;
-            creditCardInfo = cardInfo;
+            get { return numOfItemsInCart; }
+            set
+            {
+                numOfItemsInCart = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("NumOfItemsInCart"));
+            }
         }
+
+
+        [XmlIgnore]
+        private ObservableCollection<Item> cart;
+        [XmlElement(ElementName ="Cart")]
+        public ObservableCollection<Item> Cart
+        {
+            get { return cart; }
+            set
+            {
+                cart = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Cart"));
+            }
+        }
+
+        
 
 
     }

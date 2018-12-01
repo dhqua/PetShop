@@ -4,21 +4,61 @@
              xmlns:local="clr-namespace:PetShop"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
+        
         <DataTemplate x:Key="ItemTemplate">
             <StackPanel Orientation="Horizontal">
-                <Image Source="{Binding ImageSource}" 
-                           Margin="8" 
-                           Width="50" 
-                           Height="50" />
+                <Image Source="{Binding ImagePath}"
+                           Margin="5,0" 
+                           Width="75" 
+                           Height="75" />
                 <StackPanel>
-                    <TextBlock Text="{Binding ItemName}" />
-                    <TextBlock Text="{Binding Description}"
+                    <TextBlock Text="{Binding ItemName, StringFormat=Pet:{0}}" 
                                    TextWrapping="Wrap"/>
-                    <TextBlock Text="{Binding Price}"/>
-                    <TextBlock Text="{Binding Stock}"/>
+                    <TextBlock Text="{Binding Stock, StringFormat=Available:{0}}"/>
+                    <TextBlock Text="{Binding Price, StringFormat=Price:${0}}"/>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
+
+
+        <DataTemplate x:Key="CartItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding ImagePath}"
+                           Margin="5,0" 
+                           Width="75" 
+                           Height="75" />
+                <StackPanel>
+                    <TextBlock Text="{Binding ItemName, StringFormat=Pet:{0}}" 
+                                   TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Price, StringFormat=Price:${0}}"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontFamily" Value="Century Gothic"/>
+        </Style>
+        
+        <Style x:Key="carTextStyle" TargetType="TextBlock">
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontFamily" Value="Century Gothic"/>
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            
+        </Style>
+        
+        
+        
+        
     </Application.Resources>
     
     

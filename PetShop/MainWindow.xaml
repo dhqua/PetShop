@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Finesse Pet Shop"  
         WindowStartupLocation="CenterScreen" 
-        SizeToContent="Height"
+        SizeToContent="WidthAndHeight"
         Width="350" 
         >
 
@@ -25,6 +25,14 @@
         <DataTemplate DataType="{x:Type local:ShopperViewVM}">
             <local:ShopperView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type local:CartViewVM}">
+            <local:CartView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:PurchaseRecieptVM}">
+            <local:PurchaseReciept/>
+        </DataTemplate>
+
+        
     </Window.Resources>
     
     

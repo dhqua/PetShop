@@ -5,18 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PetShop"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:SizeToContent="Height"  d:DesignWidth="400" >
+    
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Save"></MenuItem>
-                <MenuItem Header="Save As"></MenuItem>
-                <MenuItem Header="Exit"></MenuItem>
+                <MenuItem Header="Save" Command="{Binding SaveCommand}"></MenuItem>
+                <MenuItem Header="Save As" Command="{Binding SaveAsCommand}"></MenuItem>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"></MenuItem>
             </MenuItem>
-            <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}"></MenuItem>
-            <MenuItem Header="Cart Contents"></MenuItem>
+            <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}" FontStyle="Italic" ></MenuItem>
+            <MenuItem Header="{Binding CurrentUser.NumOfItemsInCart}" HeaderStringFormat="{}{0} items = "></MenuItem>
+            <MenuItem Header="{Binding CurrentUser.Total}" HeaderStringFormat="${0}"></MenuItem>
         </Menu>
+        <Label x:Name="label" DockPanel.Dock="Top" Content="Welcome to the Finesse Pet Shop" HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
+
+
+        <ListBox x:Name="itemListBox" 
+                 DockPanel.Dock="Top"
+                 Height="300"
+                 ItemsSource="{Binding Items}" 
+                 ItemTemplate="{StaticResource ItemTemplate}"
+                 SelectedItem="{Binding SelectedItem}"/>
+
+
+       
         
-        <Label x:Name="label" Content="Shopper Screen" HorizontalAlignment="Left" Margin="116,95,0,0" VerticalAlignment="Top" Background="White"/>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+            <Button Content="Add To Cart" Command="{Binding AddToCartCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="View Cart" Command="{Binding ViewCartCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Check Out" Command="{Binding CheckoutCommand}" Style="{StaticResource buttonStyle}"/>
+        </StackPanel>
+        
     </DockPanel>
 </UserControl>

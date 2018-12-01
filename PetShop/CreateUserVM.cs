@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PetShop
@@ -163,11 +164,24 @@ namespace PetShop
 
         private void CreateClicked(object obj)
         {
-            tempUser = new User(UserName, Password, FirstName, LastName, Email, isSeller, new PaymentInfo(CreditCardNum, Int32.Parse(ExpirationMonth.ToString()), Int32.Parse(ExpirationYear.ToString()), CvcCode));
-            Users.Add(tempUser);
+            if (obj != null)
+            {
+                PasswordBox workArond = obj as PasswordBox;
+                Password = workArond.Password;
+            }
 
-            MainView.WriteXmlFile(Users);
-            MainView.ActiveView = new LoginVM(MainView);
+            if (!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password) && !string.IsNullOrWhiteSpace(FirstName) && !string.IsNullOrWhiteSpace(LastName) && !string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(CvcCode))
+            {
+                tempUser = new User(UserName, Password, FirstName, LastName, Email, isSeller, new PaymentInfo(CreditCardNum, Int32.Parse(ExpirationMonth.ToString()), Int32.Parse(ExpirationYear.ToString()), CvcCode));
+                Users.Add(tempUser);
+
+                MainView.WriteXmlFile(Users);
+                MainView.ActiveView = new LoginVM(MainView);
+            }
+            else
+            {
+                MessageBox.Show("Please fill all input boxes!");
+            }
         }
 
         public ICommand CancelCommand

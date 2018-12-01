@@ -70,6 +70,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CartView.xaml.cs">
+      <DependentUpon>CartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CartViewVM.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="PurchaseReciept.xaml.cs">
+      <DependentUpon>PurchaseReciept.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseRecieptVM.cs" />
     <Compile Include="SellerView.xaml.cs">
       <DependentUpon>SellerView.xaml</DependentUpon>
     </Compile>
@@ -92,6 +101,10 @@
     </Compile>
     <Compile Include="ShopperViewVM.cs" />
     <Compile Include="User.cs" />
+    <Page Include="CartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +137,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PurchaseReciept.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SellerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +188,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\lion.jpg" />
+    <Resource Include="img\snake.jpeg" />
+    <Resource Include="img\whale.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\testdog.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
