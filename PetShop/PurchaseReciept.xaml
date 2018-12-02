@@ -16,8 +16,6 @@
                 <MenuItem Header="Exit" Command="{Binding ExitCommand}"></MenuItem>
             </MenuItem>
             <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}" FontStyle="Italic" ></MenuItem>
-            <MenuItem Header="{Binding CurrentUser.NumOfItemsInCart}" HeaderStringFormat="{}{0} items = "></MenuItem>
-            <MenuItem Header="{Binding CurrentUser.Total, StringFormat={}{0:C} }"></MenuItem>
         </Menu>
         <Label x:Name="label" DockPanel.Dock="Top" Content="Thank you for your business! " HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
         <Label x:Name="confirmation" DockPanel.Dock="Top" Content="Your card on file has been charged,See reciept below. " HorizontalAlignment="Center"  Background="Transparent" FontSize="11"/>

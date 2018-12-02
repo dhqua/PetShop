@@ -12,7 +12,7 @@ namespace PetShop
     public class CartViewVM : MainViewSuper
     {
 
-        public CartViewVM()
+        public CartViewVM() : base()
         {
 
         }

@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="Finesse Pet Shop"  
         WindowStartupLocation="CenterScreen" 
-        SizeToContent="WidthAndHeight"
-        Width="350" 
-        >
+        SizeToContent="WidthAndHeight">
 
 
     <Window.Resources>
@@ -31,13 +29,23 @@
         <DataTemplate DataType="{x:Type local:PurchaseRecieptVM}">
             <local:PurchaseReciept/>
         </DataTemplate>
-
-        
+        <DataTemplate DataType="{x:Type local:RemovePetViewVM}">
+            <local:RemovePetView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:EditPetVM}">
+            <local:EditPetView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:FilterWindowVM}">
+            <local:FilterView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:AddPetVM}">
+            <local:AddPetView/>
+        </DataTemplate>
     </Window.Resources>
     
     
     <Grid Margin="0,0,0,20">
-        <ContentControl x:Name="mainDisplay" Content="{Binding ActiveView}"/>
+        <ContentControl x:Name="mainDisplay" Content="{Binding ActiveView}" Width="Auto" Height="Auto"/>
     </Grid>
     
 </Window>

@@ -30,13 +30,26 @@
                  SelectedItem="{Binding SelectedItem}"/>
 
 
-       
-        
-        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
             <Button Content="Add To Cart" Command="{Binding AddToCartCommand}" Style="{StaticResource buttonStyle}"/>
             <Button Content="View Cart" Command="{Binding ViewCartCommand}" Style="{StaticResource buttonStyle}"/>
             <Button Content="Check Out" Command="{Binding CheckoutCommand}" Style="{StaticResource buttonStyle}"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+            <ComboBox Width="90" Height="25" Margin="5,0" SelectedItem="{Binding PetFilter,Mode=OneWayToSource}" >
+                <ComboBoxItem IsSelected="True">All Pets</ComboBoxItem>
+                <ComboBoxItem>Land Pet</ComboBoxItem>
+                <ComboBoxItem>Air Pet</ComboBoxItem>
+                <ComboBoxItem>Sea Pet</ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox Width="90" Height="25" Margin="5,0" SelectedItem="{Binding SupplyFilter,Mode=OneWayToSource}">
+                <ComboBoxItem IsSelected="True" Content="All Supplies" />
+                <ComboBoxItem Content="Food" />
+                <ComboBoxItem Content="Clothing" />
+            </ComboBox>
+            <Button Content="Filter" Command="{Binding FilterCommand}" Style="{StaticResource buttonStyle}"/>
         </StackPanel>
         
     </DockPanel>

@@ -20,9 +20,19 @@ namespace PetShop
         public  XmlSerializer Xmler = new XmlSerializer(typeof(List<User>));
         public  XmlSerializer productXmler = new XmlSerializer(typeof(ObservableCollection<Item>));
 
-        //List of Users
+        //List of Users and Items
         public  List<User> Users = new List<User>();
-        public ObservableCollection<Item> Items = new ObservableCollection<Item>();
+
+        private ObservableCollection<Item> items = new ObservableCollection<Item>();
+        public ObservableCollection<Item> Items
+        {
+            get { return items; }
+            set
+            {
+                items = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Items"));
+            }
+        }
         
 
         //Main csv data file
@@ -46,9 +56,13 @@ namespace PetShop
 
         public MainWindowVM()
         {
-            //Items.Add(new Item("Test description", "2.50", 8, "Test Item", @"\img\lion.jpg"));
+            //Items.Add(new Item("Test description", "2.50", 8, "Test Animal", @"\img\lion.jpg"));
+            //Items.Add(new LandAnimal("Test description", "2.50", 8, "Test Animal", @"\img\lion.jpg",2.3,Item.LandPet));
+            //Items.Add(new Food("Test description", "2.50", 8, "Test Animal", @"\img\lion_food.jpg", true,Item.LandPet));
             //WriteItemXmlFile(Items);
             // Test item list
+            
+
             readItems();
             readUsers();
         }

@@ -1,29 +1,33 @@
-﻿<UserControl x:Class="PetShop.SellerView"
+﻿<UserControl x:Class="PetShop.RemovePetView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PetShop"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="400" MinWidth="400">
-    
+             d:DesignHeight="300" d:DesignWidth="400">
+
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Save" Command="{Binding SaveCommand}"></MenuItem>
-                <MenuItem Header="Save As" Command="{Binding SaveAsCommand}"></MenuItem>
                 <MenuItem Header="Logout" Command="{Binding LogoutCommand}"></MenuItem>
                 <MenuItem Header="Exit" Command="{Binding ExitCommand}"></MenuItem>
             </MenuItem>
             <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}" FontStyle="Italic" ></MenuItem>
         </Menu>
+        <Label x:Name="label" DockPanel.Dock="Top" Content="Pet Removal Screen" HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
+
+        <ListBox x:Name="itemListBox" 
+                 DockPanel.Dock="Top"
+                 Height="300"
+                 ItemsSource="{Binding Items}" 
+                 ItemTemplate="{StaticResource CartItemTemplate}"
+                 SelectedItem="{Binding SelectedItem}"/>
+
         
-        
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Top">
-            <TextBlock Text="Seller Home Page" FontSize="20" FontStyle="Italic" Margin="0,20"></TextBlock>
-            <Button Content="Add Pet" Command="{Binding AddPetCommand}" Style="{StaticResource buttonStyle}"/>
-            <Button Content="Remove Pet" Command="{Binding RemovePetCommand}" Style="{StaticResource buttonStyle}"/>
-            <Button Content="Edit Pet" Command="{Binding EditPetCommand}" Style="{StaticResource buttonStyle}"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Button Content="Back" Command="{Binding BackPetCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Remove" Command="{Binding RemovePetCommand}" Style="{StaticResource buttonStyle}"/>
         </StackPanel>
 
     </DockPanel>

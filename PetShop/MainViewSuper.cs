@@ -12,10 +12,18 @@ using System.Windows.Input;
 
 namespace PetShop
 {
+    // Class that represents VM that power the user controls for the main window of the application
     public abstract class MainViewSuper: INotifyPropertyChanged
     {
 
-
+        // This class is never instanstiated but the subclasses use this empty constructor
+        public MainViewSuper()
+        {
+            MainView = new MainWindowVM();
+            Users = new List<User>();
+            Items = new ObservableCollection<Item>();
+            CurrentUser = new User();
+        }
 
         public MainWindowVM MainView;
         public List<User> Users;
@@ -267,6 +275,29 @@ namespace PetShop
             File.WriteAllText(SaveLocation, textFile.ToString());
             MessageBox.Show("Reciept saved sucessfully to " + SaveLocation);
 
+        }
+
+
+        public ICommand BackPetCommand
+        {
+            get
+            {
+                if (backPetCommand == null)
+                {
+                    backPetCommand = new DelegateCommand(backPetClicked);
+                }
+
+                return backPetCommand;
+            }
+        }
+        DelegateCommand backPetCommand;
+
+
+        private void backPetClicked(object obj)
+        {
+            // Saves binding changes if switching back to main screen
+            MainView.WriteItemXmlFile(Items);
+            MainView.ActiveView = new SellerViewVM(MainView);
         }
 
     }

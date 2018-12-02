@@ -5,7 +5,7 @@ namespace PetShop
     public class PurchaseRecieptVM : MainViewSuper
     {
 
-        public PurchaseRecieptVM()
+        public PurchaseRecieptVM() : base()
         {
 
         }

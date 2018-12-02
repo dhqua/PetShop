@@ -70,16 +70,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddPetView.xaml.cs">
+      <DependentUpon>AddPetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddPetVM.cs" />
+    <Compile Include="AirAnimal.cs" />
+    <Compile Include="Animal.cs" />
     <Compile Include="CartView.xaml.cs">
       <DependentUpon>CartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="CartViewVM.cs" />
+    <Compile Include="Clothing.cs" />
+    <Compile Include="EditPetView.xaml.cs">
+      <DependentUpon>EditPetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPetVM.cs" />
+    <Compile Include="FilterView.xaml.cs">
+      <DependentUpon>FilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilterWindowVM.cs" />
+    <Compile Include="Food.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="LandAnimal.cs" />
     <Compile Include="MainViewSuper.cs" />
     <Compile Include="PurchaseReciept.xaml.cs">
       <DependentUpon>PurchaseReciept.xaml</DependentUpon>
     </Compile>
     <Compile Include="PurchaseRecieptVM.cs" />
+    <Compile Include="RemovePetView.xaml.cs">
+      <DependentUpon>RemovePetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemovePetViewVM.cs" />
+    <Compile Include="SeaAnimal.cs" />
     <Compile Include="SellerView.xaml.cs">
       <DependentUpon>SellerView.xaml</DependentUpon>
     </Compile>
@@ -98,12 +120,25 @@
       <DependentUpon>ShopperView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShopperViewVM.cs" />
+    <Compile Include="Supplies.cs" />
     <Compile Include="User.cs" />
+    <Page Include="AddPetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +160,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PurchaseReciept.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemovePetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +222,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\testdog.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\lion_food.jpg" />
+    <Resource Include="img\lion_shirt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\bird_food.jpg" />
+    <Resource Include="img\bird_shirt.jpg" />
+    <Resource Include="img\blowfish.jpg" />
+    <Resource Include="img\hawk.jpg" />
+    <Resource Include="img\whale_shirt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\fish_food.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

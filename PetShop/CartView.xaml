@@ -10,7 +10,7 @@
     <DockPanel>
         <ListBox x:Name="itemListBox" 
                  DockPanel.Dock="Top"
-                 Height="300"
+                 Style="{StaticResource itemViewStyle}"
                  ItemsSource="{Binding CurrentUser.Cart}" 
                  ItemTemplate="{StaticResource CartItemTemplate}"
                  SelectedItem="{Binding SelectedItem}"/>

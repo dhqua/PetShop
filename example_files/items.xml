@@ -1,31 +1,138 @@
 <?xml version="1.0"?>
 <ArrayOfItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Item>
+  <Item xsi:type="LandAnimal">
+    <animalAttachment>1</animalAttachment>
     <Description>Test description</Description>
     <Price>12.50</Price>
-    <Stock>6</Stock>
+    <Stock>12</Stock>
     <ItemName>Dog</ItemName>
     <ImagePath>\img\testdog.jpeg</ImagePath>
+    <LandSpeed>0</LandSpeed>
   </Item>
-  <Item>
+  <Item xsi:type="LandAnimal">
+    <animalAttachment>1</animalAttachment>
     <Description>Test description</Description>
-    <Price>89.99</Price>
-    <Stock>8</Stock>
+    <Price>149.99</Price>
+    <Stock>13</Stock>
     <ItemName>Lion</ItemName>
     <ImagePath>\img\lion.jpg</ImagePath>
+    <LandSpeed>0</LandSpeed>
   </Item>
-  <Item>
+  <Item xsi:type="Clothing">
+    <animalAttachment>1</animalAttachment>
+    <Description>Test description</Description>
+    <Price>12.99</Price>
+    <Stock>5</Stock>
+    <ItemName>Lion Shirt</ItemName>
+    <ImagePath>\img\lion_shirt.jpg</ImagePath>
+    <FabricMaterial />
+  </Item>
+  <Item xsi:type="LandAnimal">
+    <animalAttachment>1</animalAttachment>
     <Description>Test description</Description>
     <Price>49.99</Price>
-    <Stock>6</Stock>
+    <Stock>99</Stock>
     <ItemName>Snake</ItemName>
     <ImagePath>\img\snake.jpeg</ImagePath>
+    <LandSpeed>0</LandSpeed>
   </Item>
-  <Item>
+  <Item xsi:type="SeaAnimal">
+    <animalAttachment>3</animalAttachment>
     <Description>Test description</Description>
     <Price>999.99</Price>
-    <Stock>0</Stock>
+    <Stock>12</Stock>
     <ItemName>Whale</ItemName>
     <ImagePath>\img\whale.jpg</ImagePath>
+    <SwimSpeed>0</SwimSpeed>
+  </Item>
+  <Item xsi:type="SeaAnimal">
+    <animalAttachment>3</animalAttachment>
+    <Description>Test description</Description>
+    <Price>69.99</Price>
+    <Stock>7</Stock>
+    <ItemName>Blow Fish</ItemName>
+    <ImagePath>\img\blowfish.jpg</ImagePath>
+    <SwimSpeed>0</SwimSpeed>
+  </Item>
+  <Item xsi:type="Food">
+    <animalAttachment>3</animalAttachment>
+    <Description>Test description</Description>
+    <Price>8.99</Price>
+    <Stock>42</Stock>
+    <ItemName>Fish Food</ItemName>
+    <ImagePath>\img\fish_food.jpg</ImagePath>
+    <IsNonPerishable>false</IsNonPerishable>
+  </Item>
+  <Item xsi:type="Clothing">
+    <animalAttachment>3</animalAttachment>
+    <Description>Test description</Description>
+    <Price>13.99</Price>
+    <Stock>18</Stock>
+    <ItemName>Whale Shirt</ItemName>
+    <ImagePath>\img\whale_shirt.jpg</ImagePath>
+    <FabricMaterial />
+  </Item>
+  <Item xsi:type="Food">
+    <animalAttachment>1</animalAttachment>
+    <Description>Test description</Description>
+    <Price>9.75</Price>
+    <Stock>8</Stock>
+    <ItemName>Lion Food</ItemName>
+    <ImagePath>\img\lion_food.jpg</ImagePath>
+    <IsNonPerishable>true</IsNonPerishable>
+  </Item>
+  <Item xsi:type="AirAnimal">
+    <animalAttachment>2</animalAttachment>
+    <Description>Test description</Description>
+    <Price>79.99</Price>
+    <Stock>12</Stock>
+    <ItemName>Hawk</ItemName>
+    <ImagePath>\img\hawk.jpg</ImagePath>
+    <MaxFlightHeight>239</MaxFlightHeight>
+  </Item>
+  <Item xsi:type="Food">
+    <animalAttachment>2</animalAttachment>
+    <Description>Test description</Description>
+    <Price>17.99</Price>
+    <Stock>12</Stock>
+    <ItemName>Bird Food</ItemName>
+    <ImagePath>\img\bird_food.jpg</ImagePath>
+    <IsNonPerishable>false</IsNonPerishable>
+  </Item>
+  <Item xsi:type="Clothing">
+    <animalAttachment>2</animalAttachment>
+    <Description>Test description</Description>
+    <Price>12.99</Price>
+    <Stock>12</Stock>
+    <ItemName>Bird Shirt</ItemName>
+    <ImagePath>\img\bird_shirt.jpg</ImagePath>
+    <FabricMaterial />
+  </Item>
+  <Item xsi:type="LandAnimal">
+    <animalAttachment>1</animalAttachment>
+    <Description>Test</Description>
+    <Price>9983</Price>
+    <Stock>45</Stock>
+    <ItemName>Qua</ItemName>
+    <ImagePath>\img\lion.jpg</ImagePath>
+    <LandSpeed>0</LandSpeed>
+  </Item>
+  <Item xsi:type="LandAnimal">
+    <animalAttachment>1</animalAttachment>
+    <Description>Test</Description>
+    <Price>3.45</Price>
+    <Stock>456</Stock>
+    <ItemName>Qua Qua</ItemName>
+    <ImagePath>S:\Visual_Studio\A4&amp;5_Finesse\AS4_Final\PetShop\PetShop\img\hawk.jpg</ImagePath>
+    <LandSpeed>0</LandSpeed>
+  </Item>
+  <Item xsi:type="Clothing">
+    <animalAttachment>1</animalAttachment>
+    <Description>Test</Description>
+    <Price>34.55</Price>
+    <Stock>4</Stock>
+    <ItemName>Dope Shirt</ItemName>
+    <ImagePath>S:\Visual_Studio\A4&amp;5_Finesse\AS4_Final\PetShop\PetShop\img\lion_shirt.jpg</ImagePath>
+    <FabricMaterial>cotton</FabricMaterial>
   </Item>
 </ArrayOfItem>

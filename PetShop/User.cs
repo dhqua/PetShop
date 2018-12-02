@@ -94,7 +94,8 @@ namespace PetShop
 
         [XmlIgnore]
         private ObservableCollection<Item> cart;
-        [XmlElement(ElementName ="Cart")]
+        [XmlIgnore]
+        //[XmlElement(ElementName ="Cart")]
         public ObservableCollection<Item> Cart
         {
             get { return cart; }

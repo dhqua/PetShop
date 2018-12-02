@@ -64,4 +64,20 @@
     <Total>0</Total>
     <ItemsInCart>0</ItemsInCart>
   </User>
+  <User>
+    <UserName>a</UserName>
+    <Password>a</Password>
+    <FirstName>a</FirstName>
+    <LastName>a</LastName>
+    <Email>a</Email>
+    <isSeller>false</isSeller>
+    <UserPaymentInfo>
+      <CardNumber>123</CardNumber>
+      <Month>1</Month>
+      <Year>2018</Year>
+      <CVC>123</CVC>
+    </UserPaymentInfo>
+    <Total>0</Total>
+    <ItemsInCart>0</ItemsInCart>
+  </User>
 </ArrayOfUser>
