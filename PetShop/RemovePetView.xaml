@@ -20,6 +20,7 @@
         <ListBox x:Name="itemListBox" 
                  DockPanel.Dock="Top"
                  Height="300"
+                 Width="300"
                  ItemsSource="{Binding Items}" 
                  ItemTemplate="{StaticResource CartItemTemplate}"
                  SelectedItem="{Binding SelectedItem}"/>

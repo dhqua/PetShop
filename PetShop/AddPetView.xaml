@@ -15,34 +15,34 @@
             </MenuItem>
             <MenuItem Header="{Binding CurrentUser.UserName}" HeaderStringFormat="You are logged in as {0}" FontStyle="Italic" ></MenuItem>
         </Menu>
-        <Label x:Name="label" DockPanel.Dock="Top" Content="Add Pet Screen" HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
+        <Label DockPanel.Dock="Top" Content="Add Pet Screen" HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
 
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" DockPanel.Dock="Top">
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <Label  Content="Name:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-                <TextBox x:Name="newUserName" Text="{Binding Name}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Username must only contain letters"/>
+                <TextBox x:Name="newUserName" Text="{Binding Name}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter the product name"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <Label  Content="Stock:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-                <TextBox x:Name="firstName" Text="{Binding Stock}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name"/>
+                <TextBox  Text="{Binding Stock}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="1" ToolTip="Enter the number available for sale"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <Label  Content="Price:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-                <TextBox x:Name="lastName" Text="{Binding Price}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name"/>
+                <TextBox Text="{Binding Price}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="2" ToolTip="Enter the price for the product"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <Label  Content="Image" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-                <Button Content="Open" Command="{Binding OpenFileCommand}" Style="{StaticResource buttonStyle}"/>
+                <Button Content="Open" Command="{Binding OpenFileCommand}" TabIndex="3" Style="{StaticResource buttonStyle}" ToolTip="Locate image of the product"/>
             </StackPanel>
             
 
             <StackPanel Orientation="Horizontal" Margin="0,2">
                 <Label  Content="Product Type" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="12"/>
-                <ComboBox x:Name="expMonth" SelectedValuePath="Content" SelectedIndex="{Binding ProductType, Mode=OneWayToSource}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name">
+                <ComboBox x:Name="expMonth" SelectedValuePath="Content" SelectedIndex="{Binding ProductType, Mode=OneWayToSource}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="4" ToolTip="Select expiration month">
                     <ComboBoxItem IsSelected="True">Land Pet</ComboBoxItem>
                     <ComboBoxItem >Air Pet</ComboBoxItem>
                     <ComboBoxItem>Sea Pet</ComboBoxItem>
@@ -61,7 +61,7 @@
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Bottom">
             <Button Content="Back" Command="{Binding BackPetCommand}" Style="{StaticResource buttonStyle}"/>
-            <Button Content="Add" Command="{Binding AddPetCommand}" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Add" Command="{Binding AddPetCommand}" TabIndex="5" Style="{StaticResource buttonStyle}"/>
         </StackPanel>
 
     </DockPanel>

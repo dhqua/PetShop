@@ -19,12 +19,14 @@
             <MenuItem Header="{Binding CurrentUser.NumOfItemsInCart}" HeaderStringFormat="{}{0} items = "></MenuItem>
             <MenuItem Header="{Binding CurrentUser.Total}" HeaderStringFormat="${0}"></MenuItem>
         </Menu>
-        <Label x:Name="label" DockPanel.Dock="Top" Content="Welcome to the Finesse Pet Shop" HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
+        
+        <Label DockPanel.Dock="Top" Content="Welcome to the Finesse Pet Shop" HorizontalAlignment="Center"  Background="Transparent" FontSize="16"/>
 
 
         <ListBox x:Name="itemListBox" 
                  DockPanel.Dock="Top"
                  Height="300"
+                 Width="300"
                  ItemsSource="{Binding Items}" 
                  ItemTemplate="{StaticResource ItemTemplate}"
                  SelectedItem="{Binding SelectedItem}"/>

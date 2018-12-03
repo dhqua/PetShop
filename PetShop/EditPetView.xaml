@@ -20,17 +20,18 @@
         <ListBox x:Name="itemListBox" 
                  DockPanel.Dock="Top"
                  Height="300"
+                 Width="400"
                  ItemsSource="{Binding Items}" 
                  ItemTemplate="{StaticResource CartItemTemplate}"
                  SelectedItem="{Binding SelectedItem}"/>
 
         <StackPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Orientation="Horizontal">
             <TextBlock Text="Name" Margin="5,0"></TextBlock>
-            <TextBox Width="40" Height="20" Text="{Binding SelectedItem.ItemName}"></TextBox>
+            <TextBox Width="60" Height="20" Text="{Binding SelectedItem.ItemName}" ToolTip="Enter new name for product"></TextBox>
             <TextBlock Text="Stock" Margin="5,0"></TextBlock>
-            <TextBox Width="40" Height="20" Text="{Binding SelectedItem.Stock}"></TextBox>
+            <TextBox Width="60" Height="20" Text="{Binding SelectedItem.Stock}" ToolTip="Change number of available items"></TextBox>
             <TextBlock Text="Price" Margin="5,0"></TextBlock>
-            <TextBox Width="40" Height="20" Text="{Binding SelectedItem.Price}"></TextBox>
+            <TextBox Width="60" Height="20" Text="{Binding SelectedItem.Price}" ToolTip="Change price of product"></TextBox>
         </StackPanel>
         
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Bottom">

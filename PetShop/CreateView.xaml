@@ -11,37 +11,37 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" >
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="User Name:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-            <TextBox x:Name="newUserName" Text="{Binding UserName}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Username must only contain letters"/>
+            <TextBox Text="{Binding UserName}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Username must only contain letters"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label Content="Password:" Height="30" Width="110" HorizontalContentAlignment="Right" FontFamily="Century Gothic" FontSize="14"/>
-            <PasswordBox x:Name="NewUserPwBox1" Width="120" Height="30" FontFamily="Century Gothic" VerticalContentAlignment="Center" TabIndex="1" ToolTip="Password must be at least 8 characters"/>
+            <PasswordBox x:Name="NewUserPwBox1" Width="120" Height="30" FontFamily="Century Gothic" VerticalContentAlignment="Center" TabIndex="1" ToolTip="Please enter a password"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="First Name:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-            <TextBox x:Name="firstName" Text="{Binding FirstName}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name"/>
+            <TextBox Text="{Binding FirstName}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="2" ToolTip="Enter your first name"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="Last Name:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-            <TextBox x:Name="lastName" Text="{Binding LastName}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name"/>
+            <TextBox x:Name="lastName" Text="{Binding LastName}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="3" ToolTip="Enter your last name"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="Email:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="14"/>
-            <TextBox x:Name="emailTextBox" Text="{Binding Email}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name"/>
+            <TextBox x:Name="emailTextBox" Text="{Binding Email}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="4" ToolTip="Enter your email"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="Credit Card #:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="12"/>
-            <TextBox x:Name="creditCard" Text="{Binding CreditCardNum}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name"/>
+            <TextBox x:Name="creditCard" Text="{Binding CreditCardNum}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="5" ToolTip="Enter your credit card number"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="Expiration Date:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="12"/>
-            <ComboBox x:Name="expMonth" SelectedValuePath="Content" SelectedValue="{Binding ExpirationMonth, Mode=OneWayToSource}" Width="50" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name">
+            <ComboBox x:Name="expMonth" SelectedValuePath="Content" SelectedValue="{Binding ExpirationMonth, Mode=OneWayToSource}" Width="50" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="6" ToolTip="Enter your expiration month">
                 <ComboBoxItem IsSelected="True">01</ComboBoxItem>
                 <ComboBoxItem >02</ComboBoxItem>
                 <ComboBoxItem>03</ComboBoxItem>
@@ -56,7 +56,7 @@
                 <ComboBoxItem>12</ComboBoxItem>
             </ComboBox>
             <Label  Content="/" HorizontalContentAlignment="Right" Height="30" Width="20" FontFamily="Century Gothic" FontSize="20"/>
-            <ComboBox x:Name="expYear" SelectedValuePath="Content" SelectedValue="{Binding ExpirationYear, Mode=OneWayToSource}" Width="50" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name">
+            <ComboBox x:Name="expYear" SelectedValuePath="Content" SelectedValue="{Binding ExpirationYear, Mode=OneWayToSource}" Width="50" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="7" ToolTip="Enter your expiration year">
                 <ComboBoxItem IsSelected="True">2018</ComboBoxItem>
                 <ComboBoxItem>2019</ComboBoxItem>
                 <ComboBoxItem>2020</ComboBoxItem>
@@ -67,22 +67,20 @@
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="CVC:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="12"/>
-            <TextBox x:Name="cvcCode" Text="{Binding CvcCode}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="0" ToolTip="Enter your first name"/>
+            <TextBox x:Name="cvcCode" Text="{Binding CvcCode}" Width="120" Height="30" FontFamily="Century Gothic"  VerticalContentAlignment="Center" TabIndex="8" ToolTip="Enter your CVC code"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,2">
             <Label  Content="Seller?:" HorizontalContentAlignment="Right" Height="30" Width="110" FontFamily="Century Gothic" FontSize="12"/>
             <RadioButton x:Name="sellerCheck" IsChecked="{Binding IsSeller, Mode=OneWayToSource}"  VerticalAlignment="Center" Margin="10,0" >Yes</RadioButton>
-            <RadioButton VerticalAlignment="Center" >No</RadioButton>
+            <RadioButton VerticalAlignment="Center" TabIndex="9" >No</RadioButton>
         </StackPanel>
 
 
         <DockPanel HorizontalAlignment="Center" Width="190" Margin="0,10">
-            <Button x:Name="cancelButton" Command="{Binding CancelCommand}" DockPanel.Dock="Left" Content="Cancel" Width="90" FontFamily="Century Gothic" Height="25" Background="White" TabIndex="3" ToolTip="Cancel!"/>
-            <Button x:Name="createButton" Command="{Binding CreateCommand}" CommandParameter="{Binding ElementName=NewUserPwBox1}"  DockPanel.Dock="Right" Content="Create!" Width="90" FontFamily="Century Gothic" Height="25" Background="White" TabIndex="3" ToolTip="Create Account!"/>
+            <Button x:Name="cancelButton" Command="{Binding CancelCommand}" DockPanel.Dock="Left" Content="Cancel" Width="90" FontFamily="Century Gothic" Height="25" Background="White" ToolTip="Cancel!"/>
+            <Button x:Name="createButton" Command="{Binding CreateCommand}" CommandParameter="{Binding ElementName=NewUserPwBox1}"  DockPanel.Dock="Right" Content="Create!" Width="90" FontFamily="Century Gothic" Height="25" Background="White" TabIndex="10" ToolTip="Create Account!"/>
         </DockPanel>
-
-
 
     </StackPanel>
 </UserControl>

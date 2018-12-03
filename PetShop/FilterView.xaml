@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PetShop"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="400">
 
         <DockPanel>
             <Menu DockPanel.Dock="Top">
@@ -19,6 +19,7 @@
             <ListBox x:Name="itemListBox" 
                  DockPanel.Dock="Top"
                  Height="300"
+                 Width="300"
                  ItemsSource="{Binding Items}" 
                  ItemTemplate="{StaticResource ItemTemplate}"
                  SelectedItem="{Binding SelectedItem}"/>
