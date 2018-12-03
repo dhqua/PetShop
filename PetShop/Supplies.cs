@@ -7,6 +7,8 @@ using System.Xml.Serialization;
 
 namespace PetShop
 {
+
+    // Super class for all supply items in inventory
     public class Supplies : Item
     {
         
@@ -17,19 +19,10 @@ namespace PetShop
 
         public Supplies(string description, string price, int stock, string name, string imagePath, int animalType) : base(description,price,stock,name,imagePath, animalType)
         {
+            // Establishes relationship to animal 
+            // 1 - Land Animal, 2 - Air Animal, 3 - Sea Animal
             animalAttachment = animalType;
         }
 
-        
-
-
-
-
-        // Function that attacheds supply to a pet
-        // Is needed in order for filter function to work correctly
-        public int getSupplyType()
-        {
-            return animalAttachment;
-        }
     }
 }

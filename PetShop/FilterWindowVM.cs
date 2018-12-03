@@ -10,6 +10,7 @@ namespace PetShop
 {
     public class FilterWindowVM : MainViewSuper
     {
+        // Allows filter view to retun to shopper screen, and maintain the same cart items
         ShopperViewVM ReturnWindow;
 
         public FilterWindowVM() : base()
@@ -39,7 +40,8 @@ namespace PetShop
             }
         }
         DelegateCommand filterBackCommand;
-
+        
+        // Returns to shopping window, all other data is tracked through bindings in the cart
         private void filterBackClicked(object obj)
         {
             MainView.ActiveView = ReturnWindow;

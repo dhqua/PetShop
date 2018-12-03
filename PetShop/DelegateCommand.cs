@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace PetShop
 {
+    // Boiler Plate code that allows delegate commands to work
     public class DelegateCommand : ICommand
     {
         readonly Action<object> _execute;

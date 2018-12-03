@@ -14,13 +14,13 @@ namespace PetShop
         {
         }
 
+        // mainView need to switch back to seller screen, Items is needed to actually edit inventory
         public RemovePetViewVM(MainWindowVM mainView, ObservableCollection<Item> items)
         {
             MainView = mainView;
             CurrentUser = MainView.CurrentUser;
             Items = items;
         }
-
         
 
         public ICommand RemovePetCommand
@@ -36,14 +36,14 @@ namespace PetShop
             }
         }
         DelegateCommand removePetCommand;
-
-
+        
+        // Since the selcted item is of the listbox is already bound, removing a pet from inventory is trivial
         private void removePetClick(object obj)
         {
             if(SelectedItem != null)
             { 
-            Items.Remove(SelectedItem);
-            MainView.WriteItemXmlFile(Items);
+                Items.Remove(SelectedItem);
+                MainView.WriteItemXmlFile(Items);
             }
         }
 

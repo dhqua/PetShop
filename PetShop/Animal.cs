@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PetShop
 {
-    public class Animal : Item
+    // Super class for all animals
+    public abstract class Animal : Item
     {
         public Animal() : base()
         {

@@ -11,7 +11,8 @@ namespace PetShop
     public class Clothing : Supplies
     {
     
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        // Needed for bindings to work
+        public override event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public Clothing() : base()
         {
@@ -20,6 +21,7 @@ namespace PetShop
 
         public Clothing(string description, string price, int stock, string name, string imagePath,string fabric, int typeOfAnimal) : base( description,  price,  stock,  name,  imagePath, typeOfAnimal)
         {
+            // Differentiates clothing from supplies
             FabricMaterial = fabric;
         }
 

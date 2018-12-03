@@ -9,6 +9,9 @@ using System.Xml.Serialization;
 namespace PetShop
 {
 
+
+    // Eveything in the app is stored as a list of items, which these classes are derived from
+    // the fact they are derived require me to use XML includes
     [XmlInclude(typeof(Supplies))]
     [XmlInclude(typeof(LandAnimal))]
     [XmlInclude(typeof(SeaAnimal))]
@@ -21,7 +24,7 @@ namespace PetShop
     {
 
         // This event can only be called from the class in which it is instanstiated so it also present in the subclasses
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        public virtual event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         // Constants used for Filtering Later
         public static int LandPet = 1;
@@ -29,6 +32,7 @@ namespace PetShop
         public static int SeaPet = 3;
 
 
+        //Default Constructor
         public Item()
         {
             Description = "";
@@ -39,6 +43,7 @@ namespace PetShop
             animalAttachment = 0;
         }
 
+        // Constructor
         public Item(string description, string price, int stock, string name, string imagePath,int animalConnection)
         {
             Description = description;
@@ -49,6 +54,7 @@ namespace PetShop
             animalAttachment = animalConnection;
         }
 
+        // Represents product descripts
         [XmlIgnore]
         private string description;
         [XmlElement(DataType = "string", ElementName = "Description")]
@@ -60,6 +66,8 @@ namespace PetShop
                 PropertyChanged(this, new PropertyChangedEventArgs("Description"));
             }
         }
+
+        // Represents item price
         [XmlIgnore]
         private string price;
         [XmlElement(DataType = "string", ElementName = "Price")]
@@ -73,6 +81,7 @@ namespace PetShop
             }
         }
 
+        // Represnts number of items available in inventory
         [XmlIgnore]
         private int stock;
         [XmlElement(DataType = "int", ElementName = "Stock")]
@@ -93,8 +102,10 @@ namespace PetShop
             }
         }
 
+        // Represents the name of the product
         [XmlIgnore]
-        private string itemName;[XmlElement(DataType = "string", ElementName = "ItemName")]
+        private string itemName;
+        [XmlElement(DataType = "string", ElementName = "ItemName")]
         public string ItemName
         {
             get { return itemName; }
@@ -105,6 +116,7 @@ namespace PetShop
             }
         }
 
+        // Contains the file path to the image of the product
         [XmlIgnore]
         private string imagePath;
         [XmlElement(DataType = "string", ElementName = "ImagePath")]

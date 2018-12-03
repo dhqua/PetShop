@@ -17,6 +17,7 @@ namespace PetShop
 
         }
 
+        // mainView need to switch back to main shopper view, and user is needed to access the cart
         public CartViewVM(MainWindowVM mainView, User currentUser)
         {
             MainView = mainView;
@@ -42,9 +43,13 @@ namespace PetShop
 
         private void removeClicked(object obj)
         {
+            // Removes item item from cart and decrements tracking variables
             if(SelectedItem != null)
             {
+                // This line adds item back to main invetory
+                // Even though this item is in cart it is still conected to main inventory through bindings
                 SelectedItem.Stock += 1;
+
                 CurrentUser.Total -= double.Parse(SelectedItem.Price);
                 CurrentUser.NumOfItemsInCart -= 1;
                 CurrentUser.Cart.Remove(SelectedItem);
@@ -72,7 +77,7 @@ namespace PetShop
         }
         DelegateCommand _backCommand;
 
-
+        // Swithes back to main shopper view
         private void backClicked(object obj)
         {
             MainView.ActiveView = new ShopperViewVM(MainView);

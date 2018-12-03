@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace PetShop
 {
-
+    // Class representing user credit card information
     [XmlRoot(ElementName = "PaymentInfo")]
     public class PaymentInfo
     {

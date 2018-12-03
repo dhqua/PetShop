@@ -10,7 +10,8 @@ namespace PetShop
 {
     public class SeaAnimal : Animal
     {
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        // Required for bindings to work
+        public override event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public SeaAnimal() : base()
         {

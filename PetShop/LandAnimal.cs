@@ -10,8 +10,8 @@ namespace PetShop
 {
     public class LandAnimal : Animal
     {
-
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        // Required for bindings to work
+        public override event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public LandAnimal() : base()
         {
@@ -20,7 +20,7 @@ namespace PetShop
 
         public LandAnimal(string description, string price, int stock, string name, string imagePath, double landSpeed, int animalAttachment) : base( description,  price,  stock,  name,  imagePath, animalAttachment)
         {
-
+            LandSpeed = landSpeed;
         }
 
         [XmlIgnore]

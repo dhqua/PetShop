@@ -16,6 +16,7 @@ namespace PetShop
 
         }
 
+        // Requires mainView to switch back to seller screen, and items represents the store inventory
         public EditPetVM(MainWindowVM mainView, ObservableCollection<Item> items)
         {
             MainView = mainView;
@@ -23,11 +24,10 @@ namespace PetShop
             Items = items;
         }
 
+
         // Overrides the logout and exit function from the SuperClass
         // Seller class needs to write XML in these cases to make sure the edit was saved
-
-
-        public ICommand LogoutCommand
+        public override ICommand LogoutCommand
         {
             get
             {
@@ -52,8 +52,8 @@ namespace PetShop
         }
 
 
-        // Command Delegate and Function To Exit Program, hides to ensure XML is saved
-        public ICommand ExitCommand
+        // Command Delegate and Function To Exit Program, overrides to ensure XML is saved
+        public override ICommand ExitCommand
         {
             get
             {

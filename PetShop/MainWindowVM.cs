@@ -11,12 +11,15 @@ using System.Xml.Serialization;
 
 namespace PetShop
 {
+    // Container for the entire application
+    // Everything else is this application are user controls which plug into this file
     public class MainWindowVM : INotifyPropertyChanged
     {
 
+        // Needed for Bindings to function
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        //XML Serializer
+        //XML Serializers
         public  XmlSerializer Xmler = new XmlSerializer(typeof(List<User>));
         public  XmlSerializer productXmler = new XmlSerializer(typeof(ObservableCollection<Item>));
 
@@ -35,13 +38,16 @@ namespace PetShop
         }
         
 
-        //Main csv data file
+        //Main xml file names
         public readonly  string XmlPath = "users.xml";
         public readonly  string itemsXmlPath = "items.xml";
 
+
+        // View and User Controllers
         public User CurrentUser;
 
 
+        //Determines what user control is currently displaying
         private object _activeView;
         public object ActiveView
         {
@@ -54,20 +60,22 @@ namespace PetShop
             }
         }
 
+
+        // Default Constructor
         public MainWindowVM()
         {
-            //Items.Add(new Item("Test description", "2.50", 8, "Test Animal", @"\img\lion.jpg"));
+            // Unit test for XML implementation
             //Items.Add(new LandAnimal("Test description", "2.50", 8, "Test Animal", @"\img\lion.jpg",2.3,Item.LandPet));
-            //Items.Add(new Food("Test description", "2.50", 8, "Test Animal", @"\img\lion_food.jpg", true,Item.LandPet));
             //WriteItemXmlFile(Items);
-            // Test item list
-            
 
+            // Read users and products from XML files 
             readItems();
             readUsers();
         }
 
 
+
+        // Reads Users from XML File and Opens the Login View
         public void readUsers()
         {
             if (File.Exists(XmlPath))
@@ -92,6 +100,7 @@ namespace PetShop
         }
 
 
+        // Reads products from Items xml file
         public void readItems()
         {
             if (File.Exists(itemsXmlPath))
@@ -115,7 +124,7 @@ namespace PetShop
 
 
 
-        //Write to Xml file
+        //Write users to Xml file
         public void WriteXmlFile(List<User> users)
         {
             //Ensure there isn't an empty Xml file
@@ -133,11 +142,10 @@ namespace PetShop
                     Xmler.Serialize(fs, users);
                 }
             }
-
-
         }
 
 
+        // Updates products in XML file
         public void WriteItemXmlFile(ObservableCollection<Item> items)
         {
             //Ensure there isn't an empty Xml file
@@ -155,10 +163,7 @@ namespace PetShop
                     productXmler.Serialize(fs, items);
                 }
             }
-
-
         }
-
 
     }
 }

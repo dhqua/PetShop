@@ -15,6 +15,8 @@ namespace PetShop
         {
 
         }
+        
+        // mainView is needed to switch screens 
         public SellerViewVM(MainWindowVM mainView)
         {
             MainView = mainView;
@@ -35,7 +37,8 @@ namespace PetShop
             }
         }
         DelegateCommand removePetCommand;
-
+        
+        //Switches to remove pet screen
         private void removePet(object obj)
         {
             MainView.ActiveView = new RemovePetViewVM(MainView, MainView.Items);
@@ -55,12 +58,14 @@ namespace PetShop
             }
         }
         DelegateCommand editPetCommand;
-
+        
+        //Switches to edit pet screen
         private void editPet(object obj)
         {
             MainView.ActiveView = new EditPetVM(MainView, MainView.Items);
         }
 
+        // Switches to add pet screen
         public ICommand AddPetCommand
         {
             get
@@ -80,8 +85,6 @@ namespace PetShop
             MainView.ActiveView = new AddPetVM(MainView, MainView.Items);
 
         }
-
-
 
     }
 }

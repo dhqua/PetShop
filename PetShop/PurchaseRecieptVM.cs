@@ -10,6 +10,7 @@ namespace PetShop
 
         }
 
+        // Constructor: mainView need to switch back to shopper view, currentUser is needed to display cart contents
         public PurchaseRecieptVM(MainWindowVM mainView, User currentUser)
         {
             MainView = mainView;
@@ -31,6 +32,8 @@ namespace PetShop
         }
         DelegateCommand _backCommand;
 
+        // Clears cart and tracker values before returning to shopper view
+        // XML file was already updated before the receipt was displayed
         private void backClicked(object obj)
         {
             CurrentUser.Cart.Clear();

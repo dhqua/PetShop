@@ -15,26 +15,28 @@ namespace PetShop
     public class LoginVM : INotifyPropertyChanged
     {
 
+        // Required for bindings to work
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
+        // Container for the window, list of valid users, and user used to check login info
         public MainWindowVM MainView;
         public List<User> Users;
-
         public User queryUser;
+
 
         public LoginVM()
         {
         }
 
+        // Constructor needs container which also contains valid user list
         public LoginVM(MainWindowVM mainView)
         {
             MainView = mainView;
             Users = mainView.Users;
         }
 
-
+        // User entered user name
         private string _userName;
-
         public string Username
         {
             get { return _userName; }
@@ -46,8 +48,8 @@ namespace PetShop
             }
         }
 
+        // User entered password
         private string _password;
-
         public string Password
         {
             get { return _password; }
@@ -60,28 +62,10 @@ namespace PetShop
         }
 
 
-        
-
-        
-
-        /*
-        private bool ValidatAllEntries()
-        {
-            if (string.IsNullOrWhiteSpace(userName.Text))
-            { return false; }
-            if (string.IsNullOrWhiteSpace(pwBox.Password))
-            { return false; }
-
-            return true;
-        }
-        */
-
-
-
         // EVENT HANDLERS
 
 
-        //  Login Button
+        //  Binded to login Button
         public ICommand LoginCommand
         {
             get
@@ -96,8 +80,11 @@ namespace PetShop
         }
         DelegateCommand _loginCommand;
 
+        // Verifies user info and logs into the app
         private void LoginClicked(object obj)
         {
+            // Password box can not be access directly so this work around send the entire box
+            // as a command parameter of the login button click
             PasswordBox passwordWorkAround = obj as PasswordBox;
 
             if (obj != null)
@@ -105,12 +92,16 @@ namespace PetShop
                 Password = passwordWorkAround.Password;
             }
 
+            // If both fields have been filled
             if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(passwordWorkAround.Password))
             {
+                // Gets user with matching user name from the user list
                 queryUser = Users.FirstOrDefault(user => user.UserName == Username);
                 
+                // If the user exist and the password matches what the user entered
                 if( queryUser != null && Password == queryUser.Password)
                 {
+                    // Checks account type and starts the app
                     if(queryUser.isSeller)
                     {
                         MainView.CurrentUser = queryUser;
@@ -135,7 +126,6 @@ namespace PetShop
         }
 
         // Create User Button
-
         public ICommand CreateCommand
         {
             get
@@ -150,7 +140,7 @@ namespace PetShop
         }
         DelegateCommand _createCommand;
 
-
+        // Swtiches to create account window
         private void createClicked(object obj)
         {
             MainView.ActiveView = new CreateUserVM(MainView);

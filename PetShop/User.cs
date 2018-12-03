@@ -11,13 +11,13 @@ namespace PetShop
 {
 
     [XmlRoot(ElementName = "User")]
-    //CONSTRUCTOR
     public class User : INotifyPropertyChanged
     {
 
+        //CONSTRUCTOR
         public User()
         {
-            // Initializes Cart
+            // Initializes Cart and tracker variables
             Cart = new ObservableCollection<Item>();
             Total = 0;
             NumOfItemsInCart = 0;
@@ -61,8 +61,13 @@ namespace PetShop
             [XmlElement(ElementName ="UserPaymentInfo")]
             public PaymentInfo creditCardInfo { get; set; }
 
-        // Cart Implementation
+        // Required for bindings to work
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+
+        // Cart Implementation
+
+        // Represents to cost of items in the cart
         [XmlIgnore]
         private double total;
 
@@ -77,6 +82,8 @@ namespace PetShop
             }
         }
 
+        // Number of items in the cart
+        // Needed for bindings, which is why I dont use he the Count method on the cart list
         [XmlIgnore]
         private double numOfItemsInCart;
 
@@ -92,10 +99,10 @@ namespace PetShop
         }
 
 
+        // Both ignored in the xml since cart always starts as empty
         [XmlIgnore]
         private ObservableCollection<Item> cart;
         [XmlIgnore]
-        //[XmlElement(ElementName ="Cart")]
         public ObservableCollection<Item> Cart
         {
             get { return cart; }
@@ -105,9 +112,6 @@ namespace PetShop
                 PropertyChanged(this, new PropertyChangedEventArgs("Cart"));
             }
         }
-
-        
-
 
     }
   }

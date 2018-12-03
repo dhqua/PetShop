@@ -22,7 +22,7 @@
     <animalAttachment>1</animalAttachment>
     <Description>Test description</Description>
     <Price>12.99</Price>
-    <Stock>5</Stock>
+    <Stock>18</Stock>
     <ItemName>Lion Shirt</ItemName>
     <ImagePath>\img\lion_shirt.jpg</ImagePath>
     <FabricMaterial />
@@ -31,7 +31,7 @@
     <animalAttachment>1</animalAttachment>
     <Description>Test description</Description>
     <Price>49.99</Price>
-    <Stock>99</Stock>
+    <Stock>97</Stock>
     <ItemName>Snake</ItemName>
     <ImagePath>\img\snake.jpeg</ImagePath>
     <LandSpeed>0</LandSpeed>
@@ -40,7 +40,7 @@
     <animalAttachment>3</animalAttachment>
     <Description>Test description</Description>
     <Price>999.99</Price>
-    <Stock>12</Stock>
+    <Stock>4</Stock>
     <ItemName>Whale</ItemName>
     <ImagePath>\img\whale.jpg</ImagePath>
     <SwimSpeed>0</SwimSpeed>
@@ -58,7 +58,7 @@
     <animalAttachment>3</animalAttachment>
     <Description>Test description</Description>
     <Price>8.99</Price>
-    <Stock>42</Stock>
+    <Stock>41</Stock>
     <ItemName>Fish Food</ItemName>
     <ImagePath>\img\fish_food.jpg</ImagePath>
     <IsNonPerishable>false</IsNonPerishable>
@@ -67,7 +67,7 @@
     <animalAttachment>3</animalAttachment>
     <Description>Test description</Description>
     <Price>13.99</Price>
-    <Stock>18</Stock>
+    <Stock>17</Stock>
     <ItemName>Whale Shirt</ItemName>
     <ImagePath>\img\whale_shirt.jpg</ImagePath>
     <FabricMaterial />
@@ -76,7 +76,7 @@
     <animalAttachment>1</animalAttachment>
     <Description>Test description</Description>
     <Price>9.75</Price>
-    <Stock>8</Stock>
+    <Stock>7</Stock>
     <ItemName>Lion Food</ItemName>
     <ImagePath>\img\lion_food.jpg</ImagePath>
     <IsNonPerishable>true</IsNonPerishable>
@@ -85,7 +85,7 @@
     <animalAttachment>2</animalAttachment>
     <Description>Test description</Description>
     <Price>79.99</Price>
-    <Stock>12</Stock>
+    <Stock>11</Stock>
     <ItemName>Hawk</ItemName>
     <ImagePath>\img\hawk.jpg</ImagePath>
     <MaxFlightHeight>239</MaxFlightHeight>
@@ -116,23 +116,5 @@
     <ItemName>Qua</ItemName>
     <ImagePath>\img\lion.jpg</ImagePath>
     <LandSpeed>0</LandSpeed>
-  </Item>
-  <Item xsi:type="LandAnimal">
-    <animalAttachment>1</animalAttachment>
-    <Description>Test</Description>
-    <Price>3.45</Price>
-    <Stock>456</Stock>
-    <ItemName>Qua Qua</ItemName>
-    <ImagePath>S:\Visual_Studio\A4&amp;5_Finesse\AS4_Final\PetShop\PetShop\img\hawk.jpg</ImagePath>
-    <LandSpeed>0</LandSpeed>
-  </Item>
-  <Item xsi:type="Clothing">
-    <animalAttachment>1</animalAttachment>
-    <Description>Test</Description>
-    <Price>34.55</Price>
-    <Stock>4</Stock>
-    <ItemName>Dope Shirt</ItemName>
-    <ImagePath>S:\Visual_Studio\A4&amp;5_Finesse\AS4_Final\PetShop\PetShop\img\lion_shirt.jpg</ImagePath>
-    <FabricMaterial>cotton</FabricMaterial>
   </Item>
 </ArrayOfItem>

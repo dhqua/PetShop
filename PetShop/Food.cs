@@ -10,7 +10,8 @@ namespace PetShop
 {
     public class Food : Supplies
     {
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        // Allows bindings to work
+        public override event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public Food() : base()
         {
@@ -19,6 +20,7 @@ namespace PetShop
 
         public Food(string description, string price, int stock, string name, string imagePath, bool nonPerishable, int typeOfAnimal) : base( description,  price,  stock,  name,  imagePath, typeOfAnimal)
         {
+            // Differentiates food from supplies super class
             IsNonPerishable = nonPerishable;
         }
 

@@ -18,6 +18,7 @@ namespace PetShop
 
         }
 
+        // Main Container and Items list are need for login so they passed in the constructor
         public AddPetVM(MainWindowVM mainView, ObservableCollection<Item> items)
         {
             MainView = mainView;
@@ -26,8 +27,9 @@ namespace PetShop
 
 
         // New Item Property Bindings
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        public override event PropertyChangedEventHandler PropertyChanged = delegate { };
 
+        // Represent product name
         private string name;
         public string Name
         {
@@ -39,7 +41,7 @@ namespace PetShop
             }
         }
 
-
+        // Represents available stock
         private string stock;
         public string Stock
         {
@@ -52,6 +54,8 @@ namespace PetShop
             }
         }
 
+
+        //Represents item price
         private string price;
         public string Price
         {
@@ -63,6 +67,7 @@ namespace PetShop
             }
         }
 
+        // Stores the file path for the item
         private string imageSource;
         public string ImageSource
         {
@@ -74,6 +79,7 @@ namespace PetShop
             }
         }
 
+        // Stores the type of producted based on the combo box selection
         private string productType;
         public string ProductType
         {
@@ -102,11 +108,13 @@ namespace PetShop
         }
         DelegateCommand addPetCommand;
 
+        // Adds pet to main Items list which represnts the store's inventory
         private void AddPet(object obj)
         {
-
+            // If no fields are blank
             if(fieldsValid() )
             {
+                // Adds the corresponding Item based on the item type which was selected in the combbox
                 if(Int32.Parse(productType) == 0)
                 {
                     Items.Add(new LandAnimal("Test", Price, Int32.Parse(Stock), Name, ImageSource, 0, 1));
@@ -147,14 +155,14 @@ namespace PetShop
                 // Write Changes file 
                 MainView.WriteItemXmlFile(Items);
 
-                // Clear fields in case user wants add another
+                // Clear fields in case user wants add another product
                 Name = "";
                 Stock = "";
                 Price = "";
                 ImageSource = "";
                 ProductType = "0";
 
-                // Let user it was successful
+                // Let user know addition was successful
                 MessageBox.Show("The item has been added to our inventory!", "Success!");
 
             }
@@ -166,7 +174,6 @@ namespace PetShop
 
 
 
-        // Command and Function to save recipet to a user define location
         public ICommand OpenFileCommand
         {
             get
@@ -181,20 +188,23 @@ namespace PetShop
         }
         DelegateCommand openCommand;
 
+        // Uses open file dialog to get file name of the image user wants the pet to have
         private void openClicked(object obj)
         {
             
 
             OpenFileDialog openWindow = new OpenFileDialog();
             openWindow.Title = "Select Image for you new product!";
-            openWindow.Filter = "Jpeg File | *.jpg | Png File| *.png | All Files | *.*";
+            // Filters the file dialog for image files
+            openWindow.Filter = "Jpeg File|*.jpg|Png File|*.png|All Files|*.*";
             openWindow.ShowDialog();
 
+            // Sets the image source property that will be used when the object is created
             ImageSource = openWindow.FileName;
 
         }
 
-
+        // Makes sure none of the fields are blank
         private bool fieldsValid()
         {
             return (!string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Stock) && !string.IsNullOrWhiteSpace(Price) && !string.IsNullOrWhiteSpace(ImageSource) && !string.IsNullOrWhiteSpace(ProductType));

@@ -10,10 +10,12 @@ namespace PetShop
 {
     public class AirAnimal : Animal
     {
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        // Ensures bindings will work
+        public override event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public AirAnimal() : base()
         {
+            // property that differentiates AirAnimal from Animal
             MaxFlightHeight = 0;
         }
 
@@ -21,6 +23,7 @@ namespace PetShop
         {
             MaxFlightHeight = fligtHeight;
         }
+
 
         [XmlIgnore]
         private double maxFlightHeight;
