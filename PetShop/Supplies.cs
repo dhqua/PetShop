@@ -17,7 +17,7 @@ namespace PetShop
             animalAttachment = 1;
         }
 
-        public Supplies(string description, string price, int stock, string name, string imagePath, int animalType) : base(description,price,stock,name,imagePath, animalType)
+        public Supplies(string description, double price, int stock, string name, string imagePath, int animalType) : base(description,price,stock,name,imagePath, animalType)
         {
             // Establishes relationship to animal 
             // 1 - Land Animal, 2 - Air Animal, 3 - Sea Animal

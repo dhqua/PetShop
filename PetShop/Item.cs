@@ -36,7 +36,7 @@ namespace PetShop
         public Item()
         {
             Description = "";
-            Price = "";
+            Price = 0;
             Stock = 0;
             ItemName = "";
             ImagePath = "";
@@ -44,7 +44,7 @@ namespace PetShop
         }
 
         // Constructor
-        public Item(string description, string price, int stock, string name, string imagePath,int animalConnection)
+        public Item(string description, double price, int stock, string name, string imagePath,int animalConnection)
         {
             Description = description;
             Price = price;
@@ -69,14 +69,14 @@ namespace PetShop
 
         // Represents item price
         [XmlIgnore]
-        private string price;
-        [XmlElement(DataType = "string", ElementName = "Price")]
-        public string Price
+        private double price;
+        [XmlElement(DataType = "double", ElementName = "Price")]
+        public double Price
         {
             get { return price; }
             set
             {
-                price = value;
+                price = Double.Parse(value.ToString());
                 PropertyChanged(this, new PropertyChangedEventArgs("Price"));
             }
         }

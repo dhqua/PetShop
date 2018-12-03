@@ -50,7 +50,7 @@ namespace PetShop
                 // Even though this item is in cart it is still conected to main inventory through bindings
                 SelectedItem.Stock += 1;
 
-                CurrentUser.Total -= double.Parse(SelectedItem.Price);
+                CurrentUser.Total -= SelectedItem.Price;
                 CurrentUser.NumOfItemsInCart -= 1;
                 CurrentUser.Cart.Remove(SelectedItem);
 

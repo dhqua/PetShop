@@ -103,7 +103,7 @@ namespace PetShop
                     SelectedItem.Stock -= 1;
                     CurrentUser.Cart.Add(SelectedItem);
                     // The total and items in the cart are tracked separetly from the cart, since they are need for data bindings
-                    CurrentUser.Total += double.Parse(SelectedItem.Price);
+                    CurrentUser.Total += SelectedItem.Price;
                     CurrentUser.NumOfItemsInCart += 1;
                 }
                 else
@@ -248,7 +248,7 @@ namespace PetShop
             StringBuilder textFile = new StringBuilder();
             foreach (Item pet in CurrentUser.Cart)
             {
-                textFile.Append(pet.ItemName + " - $" + pet.Price + "\n");
+                textFile.Append(pet.ItemName + " - $" + pet.Price.ToString() + "\n");
             }
 
             //Adds total to string
@@ -295,7 +295,7 @@ namespace PetShop
             StringBuilder textFile = new StringBuilder();
             foreach (Item pet in CurrentUser.Cart)
             {
-                textFile.Append(pet.ItemName + " - $" + pet.Price + "\n");
+                textFile.Append(pet.ItemName + " - $" + pet.Price.ToString() + "\n");
             }
 
             textFile.Append("---------------------\n");

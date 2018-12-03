@@ -14,7 +14,7 @@ namespace PetShop
 
         }
 
-        public Animal(string description, string price, int stock, string name, string imagePath, int animalAttachment) : base(description,price,stock,name,imagePath, animalAttachment)
+        public Animal(string description, double price, int stock, string name, string imagePath, int animalAttachment) : base(description,price,stock,name,imagePath, animalAttachment)
         {
 
         }

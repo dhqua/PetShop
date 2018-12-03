@@ -18,7 +18,7 @@ namespace PetShop
             isNonPerishable = false;
         }
 
-        public Food(string description, string price, int stock, string name, string imagePath, bool nonPerishable, int typeOfAnimal) : base( description,  price,  stock,  name,  imagePath, typeOfAnimal)
+        public Food(string description, double price, int stock, string name, string imagePath, bool nonPerishable, int typeOfAnimal) : base( description,  price,  stock,  name,  imagePath, typeOfAnimal)
         {
             // Differentiates food from supplies super class
             IsNonPerishable = nonPerishable;

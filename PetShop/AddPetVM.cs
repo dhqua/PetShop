@@ -117,39 +117,39 @@ namespace PetShop
                 // Adds the corresponding Item based on the item type which was selected in the combbox
                 if(Int32.Parse(productType) == 0)
                 {
-                    Items.Add(new LandAnimal("Test", Price, Int32.Parse(Stock), Name, ImageSource, 0, 1));
+                    Items.Add(new LandAnimal("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, 0, 1));
                 }
                 else if (Int32.Parse(productType) == 1)
                 {
-                    Items.Add(new AirAnimal("Test", Price, Int32.Parse(Stock), Name, ImageSource, 0, 2));
+                    Items.Add(new AirAnimal("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, 0, 2));
                 }
                 else if (Int32.Parse(productType) == 2)
                 {
-                    Items.Add(new SeaAnimal("Test", Price, Int32.Parse(Stock), Name, ImageSource, 0, 3));
+                    Items.Add(new SeaAnimal("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, 0, 3));
                 }
                 else if (Int32.Parse(productType) == 3)
                 {
-                    Items.Add(new Food("Test", Price, Int32.Parse(Stock), Name, ImageSource,false,1));
+                    Items.Add(new Food("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource,false,1));
                 }
                 else if (Int32.Parse(productType) == 4)
                 {
-                    Items.Add(new Food("Test", Price, Int32.Parse(Stock), Name, ImageSource, false, 2));
+                    Items.Add(new Food("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, false, 2));
                 }
                 else if (Int32.Parse(productType) == 5)
                 {
-                    Items.Add(new Food("Test", Price, Int32.Parse(Stock), Name, ImageSource, false, 3));
+                    Items.Add(new Food("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, false, 3));
                 }
                 else if (Int32.Parse(productType) == 6)
                 {
-                    Items.Add(new Clothing("Test", Price, Int32.Parse(Stock), Name, ImageSource, "cotton", 1));
+                    Items.Add(new Clothing("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, "cotton", 1));
                 }
                 else if (Int32.Parse(productType) == 7)
                 {
-                    Items.Add(new Clothing("Test", Price, Int32.Parse(Stock), Name, ImageSource, "cotton", 1));
+                    Items.Add(new Clothing("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, "cotton", 1));
                 }
                 else if (Int32.Parse(productType) == 8)
                 {
-                    Items.Add(new Clothing("Test", Price, Int32.Parse(Stock), Name, ImageSource, "cotton", 1));
+                    Items.Add(new Clothing("Test", Double.Parse(Price), Int32.Parse(Stock), Name, ImageSource, "cotton", 1));
                 }
 
                 // Write Changes file 

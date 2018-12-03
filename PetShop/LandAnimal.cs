@@ -18,7 +18,7 @@ namespace PetShop
             LandSpeed = 0;
         }
 
-        public LandAnimal(string description, string price, int stock, string name, string imagePath, double landSpeed, int animalAttachment) : base( description,  price,  stock,  name,  imagePath, animalAttachment)
+        public LandAnimal(string description, double price, int stock, string name, string imagePath, double landSpeed, int animalAttachment) : base( description,  price,  stock,  name,  imagePath, animalAttachment)
         {
             LandSpeed = landSpeed;
         }

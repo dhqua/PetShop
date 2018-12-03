@@ -19,7 +19,7 @@ namespace PetShop
             MaxFlightHeight = 0;
         }
 
-        public AirAnimal(string description, string price, int stock, string name, string imagePath, double fligtHeight, int animalAttachment) : base(description,price,stock,name,imagePath, animalAttachment)
+        public AirAnimal(string description, double price, int stock, string name, string imagePath, double fligtHeight, int animalAttachment) : base(description,price,stock,name,imagePath, animalAttachment)
         {
             MaxFlightHeight = fligtHeight;
         }

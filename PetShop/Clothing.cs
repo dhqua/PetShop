@@ -19,7 +19,7 @@ namespace PetShop
             FabricMaterial = "";
         }
 
-        public Clothing(string description, string price, int stock, string name, string imagePath,string fabric, int typeOfAnimal) : base( description,  price,  stock,  name,  imagePath, typeOfAnimal)
+        public Clothing(string description, double price, int stock, string name, string imagePath,string fabric, int typeOfAnimal) : base( description,  price,  stock,  name,  imagePath, typeOfAnimal)
         {
             // Differentiates clothing from supplies
             FabricMaterial = fabric;

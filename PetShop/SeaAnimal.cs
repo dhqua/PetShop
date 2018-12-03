@@ -18,7 +18,7 @@ namespace PetShop
             SwimSpeed = 0;
         }
 
-        public SeaAnimal(string description, string price, int stock, string name, string imagePath, double swimSpeed, int animalAttachment) : base( description,  price,  stock,  name,  imagePath, animalAttachment)
+        public SeaAnimal(string description, double price, int stock, string name, string imagePath, double swimSpeed, int animalAttachment) : base( description,  price,  stock,  name,  imagePath, animalAttachment)
         {
             SwimSpeed = swimSpeed;
         }
